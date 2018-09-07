@@ -1,7 +1,34 @@
-# frontend
-a frontend exercise!
-
 日常开发
+
+问题、上传完文件后，如何清空input type="file" 元素的值
+	 var file = document.getElementById("fileData");
+	 // for IE, Opera, Safari, Chrome
+	 if (file.outerHTML) {
+		 file.outerHTML = file.outerHTML;
+	 } else { // FF(包括3.5)
+		 file.value = "";
+	 }
+
+问题、获取图片原始尺寸html5新增img dom对象的属性
+	naturalWidth / naturalHeight
+	
+问题、input框type=file设置cursor:pointer无效
+	设置font-size:0;
+	https://segmentfault.com/q/1010000000599039
+
+问题、文件上传(允许格式设置)
+	<input type="file" />
+	https://www.cnblogs.com/jiangxiaochang/p/6703730.html
+	http://www.w3school.com.cn/tags/att_input_accept.asp
+	<input type="file" name="pic" id="pic" accept="image/gif, image/jpeg" />
+	如果不限制图像的格式，可以写为：accept="image/*"。
+
+问题、contenteditable="true"的元素，获得焦点后光标处于元素开头
+	解决：使用库 rangy ;
+
+问题、获取元素最终样式;
+	window.getComputedStyle()
+	读取元素最终样式，包括了内联样式、嵌入样式和外部样式。
 
 问题、强制换行 word-break:break-all
 
